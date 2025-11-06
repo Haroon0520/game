@@ -1,0 +1,33 @@
+:root {
+  --bg:#0f1220;
+  --panel:#171a2b;
+  --ink:#e6e8f0;
+  --muted:#8a90a6;
+  --accent:#4f7cff;
+  --danger:#ff5f5f;
+}
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; justify-content: center;}
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+.app { max-width: 900px; margin: 0 auto; padding: 16px; }
+.panel { background: var(--panel); border-radius: 16px; padding: 10px; }
+.grid { display: grid; gap: 6px; justify-content: center; }
+.cell {
+  width: 44px; height: 44px; display: grid; place-items: center;
+  border-radius: 10px; background: #1f2338; border: 1px solid rgba(255,255,255,.06);
+  user-select: none; cursor: pointer; font-weight: 700; font-size: 18px;
+  transition: transform .08s ease, background .15s ease, border-color .15s ease, color .15s ease;
+}
+.cell:hover { transform: translateY(-1px); }
+.cell.selected { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(79,124,255,.25) inset; }
+.cell.matched { background: #121427; color: var(--muted); opacity: .55; }
+.cell.invalid { border-color: var(--danger); color: #ffdede; background: #2a1518; }
+.hud { display: flex; gap: 12px; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.badge { padding: 6px 10px; border-radius: 999px; background: #1f2338; border: 1px solid rgba(255,255,255,.06); font-weight: 600; }
+.button { background: var(--accent); color: white; border: none; border-radius: 10px; padding: 10px 14px; font-weight: 700; cursor: pointer; }
+.button:disabled { opacity: .5; cursor: not-allowed; }
+.levelPicker { display: flex; gap: 8px; flex-wrap: wrap; }
+.levelBtn { background: #1f2338; color: var(--ink); border: 1px solid rgba(255,255,255,.06); padding: 10px 12px; border-radius: 8px; cursor: pointer; }
+.levelBtn.active { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(79,124,255,.25) inset; }
+.footer { margin-top: 12px; display: flex; gap: 8px; align-items: center; justify-content: space-between; }
+.statusText { font-weight: 700; }
